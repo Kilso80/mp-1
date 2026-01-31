@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arthur Fiolet's Online Resume</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="main-container">
+        <header>
+            <div>
+                <h1>Arthur Fiolet</h1>
+                <p>My Online Resume</p>
+            </div>
+            <button id="theme-button" onclick="switchTheme()">
+                Change Theme
+            </button>
+        </header>
+        <div id="main-row">
+            <nav>
+                <ul>
+                    <li><a href=".">Home</a></li>
+                    <li><a href="./education.html">Education</a></li>
+                    <li><a href="./projets.html">Projects</a></li>
+                    <li><a href="./experiences.html">Experiences</a></li>
+                    <li><a href="./distinctions.html">Distinctions</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+
+            </nav>
+            <main></main>
+        </div>
+        <footer>
+            <p>
+                All Rights Reserved by Arthur Fiolet
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+                &copy
+            </p>
+        </footer>
+    </div>
+    <script>
+        function switchTheme() {
+            let themes = ["", "dark"];
+            let root = document.querySelector(":root");
+            root.className = themes[(themes.indexOf(root.className) + 1) % themes.length];
+        }
+    </script>
+</body>
+
+</html>

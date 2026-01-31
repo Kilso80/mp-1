@@ -1,0 +1,61 @@
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--main-text);
+}
+
+:root {
+    --main-bg: blue;
+    --secondary-bg: red;
+    --main-text: black;
+    --accent-color: yellow;
+}
+
+:root.dark {
+    --main-bg: green;
+    --secondary-bg: brown;
+    --main-text: white;
+    --accent-color: blue;
+}
+
+#main-container {
+    position: relative; /* So that the footer takes the width of this container instead of 100vw */
+    width: 80vw;
+    margin: 0 auto;
+    background-color: var(--main-bg);
+    min-height: 100vh;
+}
+
+footer {
+    position: absolute;
+    bottom: 0; /* To place the footer at the bottom*/
+    width: 100%;
+    padding: 10px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+nav {
+    height: 100%;
+    background-color: var(--secondary-bg);
+}
+
+#main-row {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+a {
+    color: var(--accent-color);
+}
+
+footer, header {
+    background-color: var(--secondary-bg);
+}
