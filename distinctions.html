@@ -1,7 +1,107 @@
-<main>
-    <ul>
-        <li>
+<!DOCTYPE html>
+<html>
 
-        </li>
-    </ul>
-</main>
+<head>
+    <meta charset="UTF-8">
+    <title>Arthur Fiolet's Online Resume</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="main-container">
+        <header>
+            <div>
+                <h1>Arthur Fiolet</h1>
+                <p>My Online Resume</p>
+            </div>
+            <button id="theme-button" onclick="switchTheme()">
+                Change Theme
+            </button>
+        </header>
+        <div id="main-row">
+            <nav>
+                <ul>
+                    <a href=".">
+                        <li>Home</li>
+                    </a>
+                    <a href="./education.html">
+                        <li>Education</li>
+                    </a>
+                    <a href="./projects.html">
+                        <li>Projects</li>
+                    </a>
+                    <a href="./experiences.html">
+                        <li>Experiences</li>
+                    </a>
+                    <a href="./distinctions.html">
+                        <li>Distinctions</li>
+                    </a>
+                    <a href="./contact.html">
+                        <li>Contact</li>
+                    </a>
+                </ul>
+            </nav>
+            <main id="distinctions">
+                <h2>My Distinctions</h2>
+                <p>Here are the different distinctions I recieved</p>
+                <ul>
+                    <li>
+                        <h3><i>Concours Général des Lycées</i></h3>
+                        <p>
+                            I participated in the prestigious <i>Concours Général des Lycées</i>
+                            (General Competition for High School Students) in two categories:
+                            <b>mathematics</b> and <b>computer science</b>.
+                            I have been awarded an <b>honourable mention</b> in
+                            the computer science field of this French national competition
+                            rewarding <b>outstanding students</b>.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>Prologin</h3>
+                        <p>
+                            After arriving <b>47th</b> in <b>2023</b>, I have been ranked <b>14th</b> in the
+                            <b>2024</b> edition of the French national computer science contest
+                            <a href="https://prologin.org" target="_blank" rel="noopener noreferrer">Prologin</a>.
+                            <br>
+                            After this, I decided to stop competing, in order to join the association organizing this
+                            contest and to participate to it as an organizer. With this association, I also had the
+                            opportunity to host workshops in middle schools to <b>teach</b> and promote computer science
+                            through initiations to <b>Python</b>.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>High School Hackathon</h3>
+                        <p>
+                            I won with a friend the <b>cybersecurity hackathon</b> organized by my high school.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>Academic Computer Science Olympics</h3>
+                        <p>
+                            I finished <b>first</b> ex aequo in the 2023 <b>computer science olympics</b> of the Amiens
+                            Academy.
+                        </p>
+                    </li>
+                </ul>
+            </main>
+        </div>
+        <footer>
+            <p>
+                All Rights Reserved by Arthur Fiolet
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">
+                    CC BY-NC-SA 4.0
+                </a>
+                &copy
+            </p>
+        </footer>
+    </div>
+    <script>
+        function switchTheme() {
+            let themes = ["", "dark"];
+            let root = document.querySelector(":root");
+            root.className = themes[(themes.indexOf(root.className) + 1) % themes.length];
+        }
+    </script>
+</body>
+
+</html>

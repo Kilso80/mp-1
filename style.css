@@ -1,23 +1,34 @@
+/* --------- general --------- */
 
 * {
     margin: 0;
     box-sizing: border-box;
     color: var(--main-text);
     transition: .3s ease-in-out;
+    background-color: transparent;
 }
 
 :root {
-    --main-bg: blue;
-    --secondary-bg: red;
-    --main-text: black;
-    --accent-color: yellow;
+    --main-bg: #DCD7C9;
+    --secondary-bg: #A27B5C;
+    --main-text: #2C3639;
+    --accent-color: #3F4E4F;
 }
 
 :root.dark {
-    --main-bg: green;
-    --secondary-bg: brown;
-    --main-text: white;
-    --accent-color: yellow;
+    --main-bg: #2C3639;
+    --secondary-bg: #3F4E4F;
+    --main-text: #DCD7C9;
+    --accent-color: #A27B5C;
+}
+
+a {
+    color: var(--accent-color);
+}
+
+button {
+    padding: 5px;
+    border-radius: 5px;
 }
 
 #main-container {
@@ -40,11 +51,11 @@ header {
     align-items: center;
 }
 
-header, footer, nav, main {
+header, footer, main {
     padding: 10px;
 }
 
-nav {
+footer, header, nav {
     background-color: var(--secondary-bg);
 }
 
@@ -54,10 +65,32 @@ nav {
     flex-grow: 1;
 }
 
-a {
-    color: var(--accent-color);
+/* --------- navbar --------- */
+
+nav {
+    padding: 0 10px;
+    text-align: center;
 }
 
-footer, header {
-    background-color: var(--secondary-bg);
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+    height: 100%;
+    padding: 0;
+    gap: clamp(1vh, 20px, 10vh);
 }
+
+nav a {
+    text-decoration: none;
+    background-color: var(--main-bg);
+    color: var(--secondary-bg);
+    flex-grow: 1;
+}
+
+nav li {
+    list-style: none;
+}
+

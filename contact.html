@@ -1,12 +1,77 @@
-<main>
-    <h2>Contact</h2>
-    <p>Here are different ways you can contact me</p>
-    <ul>
-        <li>Tel: <a href="tel:+33609062382">+33 6 09 06 23 82</a></li>
-        <li>Email: <a href="mailto:afiolet@bu.edu">afiolet@bu.edu</a></li>
-        <li>LinkedIn: <a href="https://linkedin.com/in/arthur-fiolet">arthur-fiolet</a></li>
-        <li>Whatsapp: <a href="https://wa.me/+33609062382">+33 6 09 06 23 82</a></li>
-        <li>GitHub: <a href="https://github.com/Kilso80">Kilso80</a></li>
-        <li>Instagram: <a href="https://www.instagram.com/arthur.flt_?igsh=MWxjZTFtYnRjank5OA==">@arthur.flt_</a></li>
-    </ul>
-</main>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arthur Fiolet's Online Resume</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="main-container">
+        <header>
+            <div>
+                <h1>Arthur Fiolet</h1>
+                <p>My Online Resume</p>
+            </div>
+            <button id="theme-button" onclick="switchTheme()">
+                Change Theme
+            </button>
+        </header>
+        <div id="main-row">
+            <nav>
+                <ul>
+                    <a href=".">
+                        <li>Home</li>
+                    </a>
+                    <a href="./education.html">
+                        <li>Education</li>
+                    </a>
+                    <a href="./projects.html">
+                        <li>Projects</li>
+                    </a>
+                    <a href="./experiences.html">
+                        <li>Experiences</li>
+                    </a>
+                    <a href="./distinctions.html">
+                        <li>Distinctions</li>
+                    </a>
+                    <a href="./contact.html">
+                        <li>Contact</li>
+                    </a>
+                </ul>
+            </nav>
+            <main id="contact">
+                <h2>Contact</h2>
+                <p>Here are the different ways you can contact me</p>
+                <ul>
+                    <li>Tel: <a href="tel:+33609062382">+33 6 09 06 23 82</a></li>
+                    <li>Email: <a href="mailto:afiolet@bu.edu">afiolet@bu.edu</a></li>
+                    <li>LinkedIn: <a href="https://linkedin.com/in/arthur-fiolet">arthur-fiolet</a></li>
+                    <li>Whatsapp: <a href="https://wa.me/+33609062382">+33 6 09 06 23 82</a></li>
+                    <li>GitHub: <a href="https://github.com/Kilso80">Kilso80</a></li>
+                    <li>Instagram: <a
+                            href="https://www.instagram.com/arthur.flt_?igsh=MWxjZTFtYnRjank5OA==">@arthur.flt_</a></li>
+                </ul>
+            </main>
+        </div>
+        <footer>
+            <p>
+                All Rights Reserved by Arthur Fiolet
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">
+                    CC BY-NC-SA 4.0
+                </a>
+                &copy
+            </p>
+        </footer>
+    </div>
+    <script>
+        function switchTheme() {
+            let themes = ["", "dark"];
+            let root = document.querySelector(":root");
+            root.className = themes[(themes.indexOf(root.className) + 1) % themes.length];
+        }
+    </script>
+</body>
+
+</html>

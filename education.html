@@ -1,33 +1,97 @@
-<main>
-    <h2>Education</h2>
-    <ol>
-        <li>
-            Boston University<br/>
-            2026-now<br/>
-            Boston, United States<br/>
-            <ul>
-                <li>Learned more about Cybersecurity and Web Development</li>
-                <li>Discovered the American Culture while learning new technical skills</li>
-            </ul>
-        </li>
-        <li>
-            EPITA School of Engineering<br/>
-            2024-now<br/>
-            Paris, France<br/>
-            <ul>
-                <li>Engineering diploma</li>
-                <li>Anglophone Section</li>
-            </ul>
-        </li>
-        <li>
-            Sainte-Famille High School<br/>
-            2021-2024<br/>
-            Amiens, France<br/>
-            <ul>
-                <li>High School diploma with the honorable mention of the jury</li>
-                <li>Specialization in Mathematics and Computer Science</li>
-                <li>Attended the optional advanced mathematics class</li>
-            </ul>
-        </li>
-    </ol>
-</main>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arthur Fiolet's Online Resume</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="main-container">
+        <header>
+            <div>
+                <h1>Arthur Fiolet</h1>
+                <p>My Online Resume</p>
+            </div>
+            <button id="theme-button" onclick="switchTheme()">
+                Change Theme
+            </button>
+        </header>
+        <div id="main-row">
+            <nav>
+                <ul>
+                    <a href=".">
+                        <li>Home</li>
+                    </a>
+                    <a href="./education.html">
+                        <li>Education</li>
+                    </a>
+                    <a href="./projects.html">
+                        <li>Projects</li>
+                    </a>
+                    <a href="./experiences.html">
+                        <li>Experiences</li>
+                    </a>
+                    <a href="./distinctions.html">
+                        <li>Distinctions</li>
+                    </a>
+                    <a href="./contact.html">
+                        <li>Contact</li>
+                    </a>
+                </ul>
+            </nav>
+            <main id="education">
+                <h2>Education</h2>
+                <ol>
+                    <li>
+                        Boston University<br />
+                        2026-now<br />
+                        Boston, United States<br />
+                        <ul>
+                            <li>Learned more about Cybersecurity and Web Development</li>
+                            <li>Discovered the American Culture while learning new technical skills</li>
+                        </ul>
+                    </li>
+                    <li>
+                        EPITA School of Engineering<br />
+                        2024-now<br />
+                        Paris, France<br />
+                        <ul>
+                            <li>Engineering diploma</li>
+                            <li>Anglophone Section</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Sainte-Famille High School<br />
+                        2021-2024<br />
+                        Amiens, France<br />
+                        <ul>
+                            <li>High School diploma with the honorable mention of the jury</li>
+                            <li>Specialization in Mathematics and Computer Science</li>
+                            <li>Attended the optional advanced mathematics class</li>
+                        </ul>
+                    </li>
+                </ol>
+            </main>
+        </div>
+        <footer>
+            <p>
+                All Rights Reserved by Arthur Fiolet
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">
+                    CC BY-NC-SA 4.0
+                </a>
+                &copy
+            </p>
+        </footer>
+    </div>
+    <script>
+        function switchTheme() {
+            let themes = ["", "dark"];
+            let root = document.querySelector(":root");
+            root.className = themes[(themes.indexOf(root.className) + 1) % themes.length];
+        }
+    </script>
+</body>
+
+</html>
