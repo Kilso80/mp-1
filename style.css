@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     color: var(--main-text);
+    transition: .3s ease-in-out;
 }
 
 :root {
@@ -16,40 +17,41 @@
     --main-bg: green;
     --secondary-bg: brown;
     --main-text: white;
-    --accent-color: blue;
+    --accent-color: yellow;
 }
 
 #main-container {
-    position: relative; /* So that the footer takes the width of this container instead of 100vw */
     width: 80vw;
     margin: 0 auto;
     background-color: var(--main-bg);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
 footer {
-    position: absolute;
-    bottom: 0; /* To place the footer at the bottom*/
     width: 100%;
-    padding: 10px;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+header, footer, nav, main {
     padding: 10px;
 }
 
 nav {
-    height: 100%;
     background-color: var(--secondary-bg);
 }
 
 #main-row {
     display: flex;
     flex-direction: row;
-    height: 100%;
+    flex-grow: 1;
 }
 
 a {
