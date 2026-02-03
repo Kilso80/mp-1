@@ -4,8 +4,8 @@
     margin: 0;
     box-sizing: border-box;
     color: var(--main-text);
-    transition: .3s ease-in-out;
     background-color: transparent;
+    font-size: calc(2px + 1.5vmin);
 }
 
 :root {
@@ -13,6 +13,7 @@
     --secondary-bg: #A27B5C;
     --main-text: #2C3639;
     --accent-color: #3F4E4F;
+    /* TO CHANGE */
 }
 
 :root.dark {
@@ -24,6 +25,30 @@
 
 a {
     color: var(--accent-color);
+}
+
+h1 {
+    font-size: calc(8px + 1.5vmin);
+}
+
+h2 {
+    font-size: calc(6px + 1.5vmin);
+}
+
+h3 {
+    font-size: calc(4px + 1.5vmin);
+}
+
+li {
+    list-style: none;
+}
+
+ul, ol {
+    padding-left: 0;
+}
+
+img {
+    max-width: 100%;
 }
 
 button {
@@ -38,7 +63,6 @@ button {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
 }
 
 footer {
@@ -51,11 +75,15 @@ header {
     align-items: center;
 }
 
-header, footer, main {
+header,
+footer,
+main {
     padding: 10px;
 }
 
-footer, header, nav {
+footer,
+header,
+nav {
     background-color: var(--secondary-bg);
 }
 
@@ -65,32 +93,196 @@ footer, header, nav {
     flex-grow: 1;
 }
 
+main {
+    flex-grow: 1;
+}
+
 /* --------- navbar --------- */
 
 nav {
-    padding: 0 10px;
+    padding: 2vh 2vw;
     text-align: center;
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
 }
 
 nav ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: stretch;
-    align-content: stretch;
     height: 100%;
-    padding: 0;
-    gap: clamp(1vh, 20px, 10vh);
+    gap: 2vh;
 }
 
 nav a {
+    padding: 2vh 2vw;
     text-decoration: none;
     background-color: var(--main-bg);
     color: var(--secondary-bg);
+}
+
+nav a#selected {
+    background-color: var(--secondary-bg);
+    border: var(--main-bg) solid thick;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* vertical centering */
+}
+
+/* --------- index --------- */
+
+/*      Flexbox self-reminder
+ * - flex-direction
+ * - justify content (aka main-axis alignment)
+ * - align-items (aka cross-axis alignment
+ * - align-content (if main axis is row and you have != columns, corresponds to how they are aligned)
+ */
+
+#portrait {
+    max-width: 50%;
+    display: inline;
+    align-self: center;
+}
+
+#index #row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2vw;
+    margin-bottom: 2vw;
+}
+
+@media screen and (max-width: 800px) {
+    #index #row {
+        flex-direction: column;
+    }
+}
+
+/* -------- education -------- */
+
+main ol {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+
+/* --------- projects -------- */
+
+#projects > ul {
+    padding: 8px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+#projects > ul > li {
+    background-color: var(--main-bg);
+    border: var(--secondary-bg) solid 5px;
+    box-shadow: 5px 4px 8px #000D;
+    border-radius: 10px;
+
+    padding: 1vw;
+    flex: 1 1 300px;
+
+    display: flex;
+    flex-direction: column;
+}
+#projects ul ul {
+    padding: 0;
+    display: flex;
+    gap: 8px;
+}
+
+#projects ul li > .card-content {
+    flex-grow: 1;
+    margin-bottom: 8px;
+}
+
+#projects ul li > .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#projects ul li > .row > div {
     flex-grow: 1;
 }
 
-nav li {
-    list-style: none;
+#projects ul ul li img {
+    max-width: 48px;
 }
 
+/* ------- experiences ------- */
+/* ------- distinctions ------ */
+
+#distinctions img {
+    max-width: 30%;
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+}
+
+#distinctions ul {
+    padding: 0;
+    position: relative;
+}
+
+#line {
+    height: 100%;
+    width: 0;
+    border: var(--main-text) solid thin;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+#distinctions li {
+    max-width: 40%;
+    padding: 4px;
+    position: relative;
+}
+
+#distinctions li:nth-child(2n) {
+    margin-left: 60%;
+    text-align: left;
+    border-left: thin solid var(--main-text);
+}
+
+#distinctions li:nth-child(2n + 1) {
+    margin-right: 60%;
+    text-align: end;
+    border-right: thin solid var(--main-text);
+}
+
+#distinctions .decorator {
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    border-top: var(--main-text) solid thin;
+}
+
+#distinctions li:nth-child(2n + 1) .decorator {
+    border-top-right-radius: 10px;
+    width: calc(25% + 2px);
+    right: calc(-25% - 2px);
+}
+
+#distinctions li:nth-child(2n) .decorator {
+    border-top-left-radius: 10px;
+    width: 25%;
+    left: -25%;
+}
+/* --------- contact --------- */
+
+#contact {
+    text-align: center;
+}

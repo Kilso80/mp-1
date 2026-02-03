@@ -30,7 +30,7 @@
                     <a href="./projects.html">
                         <li>Projects</li>
                     </a>
-                    <a href="./experiences.html">
+                    <a href="./experiences.html" id="selected">
                         <li>Experiences</li>
                     </a>
                     <a href="./distinctions.html">
@@ -42,10 +42,9 @@
                 </ul>
             </nav>
             <main id="experiences">
-                <h2>My Experiences</h2>
                 <ul>
                     <li>
-                        <h3>Internship @ OVHcloud</h3>
+                        <h2>Internship @ OVHcloud</h2>
                         <p class="date">June-August 2025</p>
                         <p>
                             This internship was centered around the integration of <b>AI tools</b> in a work
@@ -55,7 +54,7 @@
                         </p>
                     </li>
                     <li>
-                        <h3>Internship @ BOW MEDICAL</h3>
+                        <h2>Internship @ BOW MEDICAL</h2>
                         <p class="date">April 2024</p>
                         <p>
                             At Bow Medical, I gained experience in development, and observed in detail <b>workflows</b>
@@ -65,7 +64,7 @@
                         </p>
                     </li>
                     <li>
-                        <h3>Internship @ Swiss Life France</h3>
+                        <h2>Internship @ Swiss Life France</h2>
                         <p class="date">April 2023</p>
                         <p>
                             During this internship, I discovered the <b>Agile methodology</b>, and learned to
@@ -92,7 +91,10 @@
             let themes = ["", "dark"];
             let root = document.querySelector(":root");
             root.className = themes[(themes.indexOf(root.className) + 1) % themes.length];
+            window.localStorage.setItem("theme", root.className);
         }
+
+        document.querySelector(":root").className = window.localStorage.getItem("theme");
     </script>
 </body>
 

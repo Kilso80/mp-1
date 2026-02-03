@@ -24,7 +24,7 @@
                     <a href=".">
                         <li>Home</li>
                     </a>
-                    <a href="./education.html">
+                    <a href="./education.html" id="selected">
                         <li>Education</li>
                     </a>
                     <a href="./projects.html">
@@ -42,30 +42,29 @@
                 </ul>
             </nav>
             <main id="education">
-                <h2>Education</h2>
                 <ol>
                     <li>
-                        Boston University<br />
-                        2026-now<br />
-                        Boston, United States<br />
+                        <h2>Boston University</h2>
+                        <p class="date">2026-now</p>
+                        <p class="place">Boston, United States</p>
                         <ul>
                             <li>Learned more about Cybersecurity and Web Development</li>
                             <li>Discovered the American Culture while learning new technical skills</li>
                         </ul>
                     </li>
                     <li>
-                        EPITA School of Engineering<br />
-                        2024-now<br />
-                        Paris, France<br />
+                        <h2>EPITA School of Engineering</h2>
+                        <p class="date">2024-now</p>
+                        <p class="place">Paris, France</p>
                         <ul>
                             <li>Engineering diploma</li>
                             <li>Anglophone Section</li>
                         </ul>
                     </li>
                     <li>
-                        Sainte-Famille High School<br />
-                        2021-2024<br />
-                        Amiens, France<br />
+                        <h2>Sainte-Famille High School</h2>
+                        <p class="date">2021-2024</p>
+                        <p class="place">Amiens, France</p>
                         <ul>
                             <li>High School diploma with the honorable mention of the jury</li>
                             <li>Specialization in Mathematics and Computer Science</li>
@@ -90,7 +89,10 @@
             let themes = ["", "dark"];
             let root = document.querySelector(":root");
             root.className = themes[(themes.indexOf(root.className) + 1) % themes.length];
+            window.localStorage.setItem("theme", root.className);
         }
+
+        document.querySelector(":root").className = window.localStorage.getItem("theme");
     </script>
 </body>
 

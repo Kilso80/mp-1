@@ -36,13 +36,12 @@
                     <a href="./distinctions.html">
                         <li>Distinctions</li>
                     </a>
-                    <a href="./contact.html">
+                    <a href="./contact.html" id="selected">
                         <li>Contact</li>
                     </a>
                 </ul>
             </nav>
             <main id="contact">
-                <h2>Contact</h2>
                 <p>Here are the different ways you can contact me</p>
                 <ul>
                     <li>Tel: <a href="tel:+33609062382">+33 6 09 06 23 82</a></li>
@@ -70,7 +69,10 @@
             let themes = ["", "dark"];
             let root = document.querySelector(":root");
             root.className = themes[(themes.indexOf(root.className) + 1) % themes.length];
+            window.localStorage.setItem("theme", root.className);
         }
+
+        document.querySelector(":root").className = window.localStorage.getItem("theme");
     </script>
 </body>
 

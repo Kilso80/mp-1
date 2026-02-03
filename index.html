@@ -21,7 +21,7 @@
         <div id="main-row">
             <nav>
                 <ul>
-                    <a href=".">
+                    <a href="." id="selected">
                         <li>Home</li>
                     </a>
                     <a href="./education.html">
@@ -41,20 +41,19 @@
                     </a>
                 </ul>
             </nav>
-            <main>
-                <h2>Home</h2>
-                <img src="me.jpg" alt="Myself Young Man Arthur Fiolet Portrait" />
-                <p>
-                    I am Arthur Fiolet, a french computer science student at
-                    <a href="https://epita.fr" target="_blank" rel="noopener noreferrer">
-                        EPITA
-                    </a>, currently studying abroad at the
-                    <a href="http://bu.edu" target="_blank" rel="noopener noreferrer">
-                        Boston University
-                    </a>.
-                    I want to professionalize in software engineering, and I look forward to gaining skills and
-                    experience during this journey.
-                </p>
+            <main id="index">
+                <div id="row">
+                    <img src="./resources/me.jpg" alt="Myself Young Man Arthur Fiolet Portrait" id="portrait" />
+                    <p>
+                        I am Arthur Fiolet, a french computer science student at
+                        <a href="https://epita.fr" target="_blank" rel="noopener noreferrer">
+                            EPITA</a>, currently studying abroad at the
+                        <a href="http://bu.edu" target="_blank" rel="noopener noreferrer">
+                            Boston University</a>.
+                        I want to professionalize in software engineering, and I look forward to gaining skills and
+                        experience during this journey.
+                    </p>
+                </div>
                 <p>
                     You are here reading my online resume. You will be able to find here my history and information
                     about myself in the several pages of this website.
@@ -76,7 +75,10 @@
             let themes = ["", "dark"];
             let root = document.querySelector(":root");
             root.className = themes[(themes.indexOf(root.className) + 1) % themes.length];
+            window.localStorage.setItem("theme", root.className);
         }
+
+        document.querySelector(":root").className = window.localStorage.getItem("theme");
     </script>
 </body>
 

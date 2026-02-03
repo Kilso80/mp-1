@@ -33,7 +33,7 @@
                     <a href="./experiences.html">
                         <li>Experiences</li>
                     </a>
-                    <a href="./distinctions.html">
+                    <a href="./distinctions.html" id="selected">
                         <li>Distinctions</li>
                     </a>
                     <a href="./contact.html">
@@ -42,11 +42,10 @@
                 </ul>
             </nav>
             <main id="distinctions">
-                <h2>My Distinctions</h2>
-                <p>Here are the different distinctions I recieved</p>
+                <img src="./resources/medal.svg" alt="Medal decorative distinction">
                 <ul>
                     <li>
-                        <h3><i>Concours Général des Lycées</i></h3>
+                        <h2>Concours Général des Lycées</h2>
                         <p>
                             I participated in the prestigious <i>Concours Général des Lycées</i>
                             (General Competition for High School Students) in two categories:
@@ -55,9 +54,10 @@
                             the computer science field of this French national competition
                             rewarding <b>outstanding students</b>.
                         </p>
+                        <div class="decorator"></div>
                     </li>
                     <li>
-                        <h3>Prologin</h3>
+                        <h2>Prologin</h2>
                         <p>
                             After arriving <b>47th</b> in <b>2023</b>, I have been ranked <b>14th</b> in the
                             <b>2024</b> edition of the French national computer science contest
@@ -68,20 +68,24 @@
                             opportunity to host workshops in middle schools to <b>teach</b> and promote computer science
                             through initiations to <b>Python</b>.
                         </p>
+                        <div class="decorator"></div>
                     </li>
                     <li>
-                        <h3>High School Hackathon</h3>
+                        <h2>High School Hackathon</h2>
                         <p>
                             I won with a friend the <b>cybersecurity hackathon</b> organized by my high school.
                         </p>
+                        <div class="decorator"></div>
                     </li>
                     <li>
-                        <h3>Academic Computer Science Olympics</h3>
+                        <h2>Academic Computer Science Olympics</h2>
                         <p>
                             I finished <b>first</b> ex aequo in the 2023 <b>computer science olympics</b> of the Amiens
                             Academy.
                         </p>
+                        <div class="decorator"></div>
                     </li>
+                    <div id="line"></div>
                 </ul>
             </main>
         </div>
@@ -100,7 +104,10 @@
             let themes = ["", "dark"];
             let root = document.querySelector(":root");
             root.className = themes[(themes.indexOf(root.className) + 1) % themes.length];
+            window.localStorage.setItem("theme", root.className);
         }
+
+        document.querySelector(":root").className = window.localStorage.getItem("theme");
     </script>
 </body>
 
