@@ -243,6 +243,8 @@ nav a#selected {
     padding: .1vh 0;
     background-color: var(--main-bg);
     z-index: 1;
+    border-top: var(--main-text) solid thin;
+    border-bottom: var(--main-text) solid thin;
 }
 
 /* --------- projects -------- */
@@ -306,11 +308,30 @@ nav a#selected {
     padding-left: 2vw;
     gap: 5vh;
     justify-content: space-around;
-    border-left: thin solid var(--main-text);
+    border-left: .1vw solid var(--main-text);
 }
 
-#experiences li {
+#experiences li h2 {
+    position: relative;
+}
 
+#experiences li h2::before { /* This is the little nice dot on the left line */
+    content: "";
+    position: absolute;
+    left: -2.55vw;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: var(--main-bg) solid 2vw;
+    border-bottom: var(--main-bg) solid 2vw;
+    width: 1vw;
+    height: 1vw;
+    border-radius: 100%;
+    background-color: var(--main-text);
+}
+
+#experiences .date {
+    filter: opacity(80%);
+    font-size: 90%;
 }
 
 /* ------- distinctions ------ */
@@ -383,4 +404,8 @@ nav a#selected {
 
 #contact {
     text-align: center;
+}
+
+#contact li img {
+    max-height: calc(2px + 1.5vh);
 }
