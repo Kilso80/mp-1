@@ -86,6 +86,7 @@ footer,
 header,
 nav {
     background-color: var(--secondary-bg);
+    z-index: 10;
 }
 
 #main-row {
@@ -196,10 +197,52 @@ nav a#selected {
 
 /* -------- education -------- */
 
-main ol {
+#education ol {
     display: flex;
     flex-direction: column;
-    align-items: space-between;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    min-height: calc(100% - 10vw - 25vh);
+    margin: 10vh 0 10vh;
+    gap: 5vh;
+    position: relative;
+}
+
+#education #arrow {
+    position: absolute;
+    top: calc(-10vh + 5vw);
+    height: calc(100% + 20vh - 5vw);
+    width: 10vw;
+    background-color: var(--main-text);
+}
+
+#education #arrow::before, #education #arrow::after {
+    height: calc(sqrt(50) * 1vw);
+    width: calc(sqrt(50) * 1vw);
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+#education #arrow::before {
+    background-color: var(--main-bg);
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    bottom: -7vw;
+}
+
+#education #arrow::after {
+    background-color: var(--main-text);
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+    top: -7vw;
+}
+
+#education > ol > li {
+    padding: .1vh 0;
+    background-color: var(--main-bg);
+    z-index: 1;
 }
 
 /* --------- projects -------- */
@@ -254,6 +297,22 @@ main ol {
 }
 
 /* ------- experiences ------- */
+
+#experiences ul {
+    margin: 5% 0 5% 8vw;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2vw;
+    gap: 5vh;
+    justify-content: space-around;
+    border-left: thin solid var(--main-text);
+}
+
+#experiences li {
+
+}
+
 /* ------- distinctions ------ */
 
 #distinctions img {
@@ -281,6 +340,11 @@ main ol {
     max-width: 40%;
     padding: 4px;
     position: relative;
+    margin-top: -5%;
+}
+
+#distinctions li:first-child {
+    margin-top: 0;
 }
 
 #distinctions li:nth-child(2n) {
@@ -304,14 +368,14 @@ main ol {
 
 #distinctions li:nth-child(2n + 1) .decorator {
     border-right: var(--main-text) solid thin;
-    border-top-right-radius: 10px;
-    width: calc(25% + 2px);  /* Because of the 4px padding, else it is not the right side*/
+    border-top-right-radius: 25px;
+    width: calc(25% + 2px);  /* Because of the 4px padding, else it does not match the #line */
     right: calc(-25% - 2px);
 }
 
 #distinctions li:nth-child(2n) .decorator {
     border-left: var(--main-text) solid thin;
-    border-top-left-radius: 10px;
+    border-top-left-radius: 25px;
     width: 25%;
     left: -25%;
 }
