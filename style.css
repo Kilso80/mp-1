@@ -61,6 +61,7 @@ button {
     margin: 0 auto;
     background-color: var(--main-bg);
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
 }
@@ -147,12 +148,12 @@ nav a#selected {
     nav {
         padding: 1vh 1vw;
         width: 100%;
+        z-index: 1;
     }
 
     nav ul {
         flex-direction: row;
         gap: 1vw;
-        justify-content: space-around;
     }
     
     nav a {
@@ -302,12 +303,14 @@ main ol {
 }
 
 #distinctions li:nth-child(2n + 1) .decorator {
+    border-right: var(--main-text) solid thin;
     border-top-right-radius: 10px;
-    width: calc(25% + 2px);
+    width: calc(25% + 2px);  /* Because of the 4px padding, else it is not the right side*/
     right: calc(-25% - 2px);
 }
 
 #distinctions li:nth-child(2n) .decorator {
+    border-left: var(--main-text) solid thin;
     border-top-left-radius: 10px;
     width: 25%;
     left: -25%;
