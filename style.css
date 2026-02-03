@@ -226,6 +226,7 @@ nav a#selected {
 }
 
 #education #arrow::before {
+    /* This is the negative ^ at the bottom of the arrow */
     background-color: var(--main-bg);
     transform: rotate(-45deg);
     transform-origin: top left;
@@ -233,6 +234,7 @@ nav a#selected {
 }
 
 #education #arrow::after {
+    /* This is the ^ At the top of the arrow */
     background-color: var(--main-text);
     transform: rotate(45deg);
     transform-origin: bottom left;
@@ -361,11 +363,6 @@ nav a#selected {
     max-width: 40%;
     padding: 4px;
     position: relative;
-    margin-top: -5%;
-}
-
-#distinctions li:first-child {
-    margin-top: 0;
 }
 
 #distinctions li:nth-child(2n) {
