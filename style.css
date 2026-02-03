@@ -13,7 +13,7 @@
     --secondary-bg: #A27B5C;
     --main-text: #2C3639;
     --accent-color: #3F4E4F;
-    /* TO CHANGE */
+    /* UGLY: TO CHANGE */
 }
 
 :root.dark {
@@ -28,15 +28,15 @@ a {
 }
 
 h1 {
-    font-size: calc(8px + 1.5vmin);
+    font-size: 150%;
 }
 
 h2 {
-    font-size: calc(6px + 1.5vmin);
+    font-size: 125%;
 }
 
 h3 {
-    font-size: calc(4px + 1.5vmin);
+    font-size: 110%;
 }
 
 li {
@@ -95,6 +95,9 @@ nav {
 
 main {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* --------- navbar --------- */
@@ -105,6 +108,8 @@ nav {
     position: sticky;
     top: 0;
     max-height: 100vh;
+    width: 30%;
+    flex-shrink: 0;
 }
 
 nav ul {
@@ -116,22 +121,47 @@ nav ul {
 }
 
 nav a {
-    padding: 2vh 2vw;
     text-decoration: none;
     background-color: var(--main-bg);
     color: var(--secondary-bg);
+    position: relative;
+    height: 5vh;
+}
+
+nav li {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 nav a#selected {
     background-color: var(--secondary-bg);
-    border: var(--main-bg) solid thick;
+    border: var(--main-bg) solid 1vmin;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* vertical centering */
+@media screen and (max-width: 750px) {
+    #main-row { /* Good choice of class name I know :) */
+        flex-direction: column;
+    }
+    
+    nav {
+        padding: 1vh 1vw;
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 1vw;
+        justify-content: space-around;
+    }
+    
+    nav a {
+        flex-grow: 1;
+    }
+
+    nav li {
+        font-size: calc(2px + 1.2vw);
+    }
 }
 
 /* --------- index --------- */
@@ -199,6 +229,7 @@ main ol {
 #projects ul ul {
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
 }
 
