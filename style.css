@@ -8,11 +8,10 @@
 /* --------- general --------- */
 
 :root {
-    --main-bg: #DCD7C9;
-    --secondary-bg: #A27B5C;
-    --main-text: #2C3639;
-    --accent-color: #3F4E4F;
-    /* UGLY: TO CHANGE */
+    --main-bg: #E2E8CE;
+    --secondary-bg: #ACBFA4;
+    --main-text: #262626;
+    --accent-color: #FF7F11;
 }
 
 :root.dark {
@@ -22,12 +21,15 @@
     --accent-color: #A27B5C;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 * {
     margin: 0;
     box-sizing: border-box;
     color: var(--main-text);
     background-color: transparent;
     font-size: calc(2px + 1.5vmin);
+    font-family: 'Ubuntu', sans-serif;
 }
 
 a {
