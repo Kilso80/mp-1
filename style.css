@@ -1,12 +1,11 @@
-/* --------- general --------- */
+/*      Flexbox self-reminder
+ * - flex-direction
+ * - justify content (aka main-axis alignment)
+ * - align-items (aka cross-axis alignment
+ * - align-content (if main axis is row and you have != columns, corresponds to how they are aligned)
+ */
 
-* {
-    margin: 0;
-    box-sizing: border-box;
-    color: var(--main-text);
-    background-color: transparent;
-    font-size: calc(2px + 1.5vmin);
-}
+/* --------- general --------- */
 
 :root {
     --main-bg: #DCD7C9;
@@ -21,6 +20,14 @@
     --secondary-bg: #3F4E4F;
     --main-text: #DCD7C9;
     --accent-color: #A27B5C;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--main-text);
+    background-color: transparent;
+    font-size: calc(2px + 1.5vmin);
 }
 
 a {
@@ -59,9 +66,10 @@ button {
 #main-container {
     width: 80vw;
     margin: 0 auto;
-    background-color: var(--main-bg);
     min-height: 100vh;
     min-height: 100dvh;
+    background-color: var(--main-bg);
+
     display: flex;
     flex-direction: column;
 }
@@ -76,15 +84,11 @@ header {
     align-items: center;
 }
 
-header,
-footer,
-main {
+header, footer, main {
     padding: 10px;
 }
 
-footer,
-header,
-nav {
+footer, header, nav {
     background-color: var(--secondary-bg);
     z-index: 10;
 }
@@ -166,14 +170,7 @@ nav a#selected {
     }
 }
 
-/* --------- index --------- */
-
-/*      Flexbox self-reminder
- * - flex-direction
- * - justify content (aka main-axis alignment)
- * - align-items (aka cross-axis alignment
- * - align-content (if main axis is row and you have != columns, corresponds to how they are aligned)
- */
+/* ---------- home --------- */
 
 #portrait {
     max-width: 50vw;
@@ -298,7 +295,7 @@ nav a#selected {
 }
 
 #projects ul ul li img {
-    max-width: 48px;
+    max-width: 48px;    /* TODO: CHANGE UNIT TO Vx */
 }
 
 /* ------- experiences ------- */
