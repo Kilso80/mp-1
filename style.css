@@ -176,7 +176,8 @@ nav a#selected {
  */
 
 #portrait {
-    max-width: 50%;
+    max-width: 50vw;
+    max-height: 50vh;
     display: inline;
     align-self: center;
 }
@@ -303,7 +304,7 @@ nav a#selected {
 /* ------- experiences ------- */
 
 #experiences ul {
-    margin: 5% 0 5% 8vw;
+    margin: 5% 0 5% 2vw;
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -320,9 +321,9 @@ nav a#selected {
 #experiences li h2::before { /* This is the little nice dot on the left line */
     content: "";
     position: absolute;
-    left: -2.55vw;
+    left: -2vw;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
     border-top: var(--main-bg) solid 2vw;
     border-bottom: var(--main-bg) solid 2vw;
     width: 1vw;
