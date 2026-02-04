@@ -297,7 +297,7 @@ nav a#selected {
 }
 
 #projects ul ul li img {
-    max-width: 48px;    /* TODO: CHANGE UNIT TO Vx */
+    max-width: 5vmin;
 }
 
 /* ------- experiences ------- */
