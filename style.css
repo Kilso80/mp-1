@@ -151,6 +151,17 @@ nav a#selected {
     #main-row { /* Good choice of class name I know :) */
         flex-direction: column;
     }
+
+    header {
+        text-align: center;
+        justify-content: end;
+    }
+
+    header div {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
     
     nav {
         padding: 1vh 1vw;
@@ -299,6 +310,41 @@ nav a#selected {
 #projects ul ul li img {
     max-width: 5vmin;
 }
+
+/* -------- calculator ------- */
+
+.in-container {
+    margin-bottom: 1vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.in-container label {
+    flex-grow: 1;
+}
+
+#calculator #buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: .5vw;
+}
+
+#calculator #buttons button {
+    flex: 1 1 2vw;
+}
+
+#calculator #buttons button[disabled] {
+    filter: opacity(50%);
+}
+
+#calculator #output {
+    text-align: center;
+}
+
+#calculator #output.negative {
+    color: red;
+}
+
 
 /* ------- experiences ------- */
 
