@@ -41,6 +41,10 @@ power.addEventListener("click", () => {
     let n1 = Number(firstInput.value);
     let n2 = Number(secondInput.value);
     let res = 1;
+    if (n2 < 0) {
+        n2 = -n2;
+        n1 = 1 / n1;
+    }
     for (let i = 0; i < n2; i++)
         res *= n1;
     output.innerHTML = `${n1} ** ${n2} = ${res}`
