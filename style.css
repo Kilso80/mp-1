@@ -450,5 +450,5 @@ nav a#selected {
 }
 
 #contact li img {
-    max-height: calc(2px + 1.5vh);
+    max-height: calc(2px + 2vh);
 }
