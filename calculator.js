@@ -40,6 +40,7 @@ divide.addEventListener("click", () => {
 power.addEventListener("click", () => {
     let n1 = Number(firstInput.value);
     let n2 = Number(secondInput.value);
+    output.innerHTML = `${n1} ** ${n2}`;
     let res = 1;
     if (n2 < 0) {
         n2 = -n2;
@@ -47,7 +48,7 @@ power.addEventListener("click", () => {
     }
     for (let i = 0; i < n2; i++)
         res *= n1;
-    output.innerHTML = `${n1} ** ${n2} = ${res}`
+    output.innerHTML += ` = ${res}`
     output.className = res < 0? "negative": "";
 });
 
